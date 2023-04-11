@@ -32,9 +32,12 @@ function playRound(playerSelection, computerSelection){
     }else if(playerSelectionLower === "rock" && computerSelection === "scissor" || playerSelectionLower === "paper" && computerSelection === "rock" || playerSelectionLower === "scissor" && computerSelection === "paper" ){
         result = `You win! ${playerSelectionLower} beats ${computerSelection}`
         playerScore += 1;
-    }else{
+    }else if(computerSelection === "rock" && playerSelectionLower === "scissor" || computerSelection === "paper" && playerSelectionLower === "rock" || computerSelection === "scissor" && playerSelectionLower === "paper"){
         result = `You lose! ${computerSelection} beats ${playerSelectionLower}`
         computerScore += 1;
+    }
+    else{ 
+        result = `${playerSelectionLower} is not a correct input`;
     }
     return result;
 }
